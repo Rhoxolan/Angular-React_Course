@@ -1,10 +1,11 @@
 const Emitter = require("events");
 let emitter = new Emitter();
 let eventName = "Timer";
+
 emitter.on(eventName, count => {
     let i = +count;
     let timer = setInterval(() => {
-        i++;
+        i--;
         console.log(i);
         if (i === 0) {
             clearInterval(timer);
@@ -13,7 +14,7 @@ emitter.on(eventName, count => {
 });
 
 function myTimer(count) {
-    emitter.on(eventName, count);
+    emitter.emit(eventName, count);
 }
 
 module.exports = myTimer;
