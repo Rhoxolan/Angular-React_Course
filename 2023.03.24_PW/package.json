@@ -1,0 +1,16 @@
+{
+  "name": "2023.03.24_pw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "Rhoxolan",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.85.1",
+    "webpack-cli": "^5.1.3"
+  }
+}
