@@ -10,3 +10,6 @@ HW - работа с npm, использование express.js. Пример з
 
 24.03.2023 - Webpack
 PW - работа с webpack, сборка JavaScript модулей в 1 скрипт. Пример работы в node.js с событиями EventEmitter и асинхронным таймером setInterval().
+
+28.03.2023 - TypeScript
+PW - работа с TypeScript. Пример использования абстрактных классов и интерфейсов в TS.
