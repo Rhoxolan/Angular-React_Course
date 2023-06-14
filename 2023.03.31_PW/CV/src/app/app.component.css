@@ -1,3 +1,8 @@
+#cvContainer {
+  max-width: 1000px;
+  min-width: 700px;
+}
+
 #leftSideDiv {
   background-color: #293E49;
   color: white;
