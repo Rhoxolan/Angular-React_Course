@@ -1,20 +1,6 @@
 <h4>Skills</h4>
 <ul>
-  <li>C#, .NET</li>
-  <li>ASP.NET Core (MVC, WebAPI)</li>
-  <li>WPF, Windows Froms</li>
-  <li>Entity Framework Core, ADO.NET</li>
-  <li>MS Sql Server, SQLite</li>
-  <li>T-SQL</li>
-  <li>OOP</li>
-  <li>MVC, MVVM</li>
-  <li>UML</li>
-  <li>Design patterns, SOLID, KISS, DRY</li>
-  <li>HTML, CSS, Bootstrap</li>
-  <li>JavaScript, TypeScript</li>
-  <li>REST, AJAX</li>
-  <li>JSON, XML</li>
-  <li>C++</li>
-  <li>Git, GitHub</li>
-  <li>Pre-intermediate English</li>
+  <li *ngFor="let skill of skills">
+    {{skill}}
+  </li>
 </ul>

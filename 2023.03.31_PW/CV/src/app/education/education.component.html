@@ -1,25 +1,14 @@
 <h4>Education</h4>
 <ul>
-  <li>
+  <li *ngFor="let education of Educations">
     <div>
-      <strong>IT STEP Academy</strong>
+      <strong>{{education.Name}}</strong>
     </div>
     <div>
-      Kryvyi Rih (October 2020 - January 2024)
+      {{education.City}} ({{education.DateOfAdmission | date:"MMMM y"}} - {{education.DateOfGraduation | date:"MMMM y"}})
     </div>
     <div>
-      <i>Software Development</i>
-    </div>
-  </li>
-  <li>
-    <div>
-      <strong>Krivoy Rog Mining and Metallurgical Professional Lyceum</strong>
-    </div>
-    <div>
-      Kryvyi Rih (September 2014 - June 2017)
-    </div>
-    <div>
-      <i>Electrician</i>
+      <i>{{education.Specialty}}</i>
     </div>
   </li>
 </ul>
