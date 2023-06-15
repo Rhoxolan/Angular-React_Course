@@ -1,0 +1,19 @@
+<h4 class="mb-3">Projects</h4>
+<ul>
+  <li *ngFor="let project of Projects" class="mb-3">
+    <div>
+      <strong>{{project.Name}}</strong>&#32;
+      ({{project.DateOfStart | date:"MMMM y"}} - {{project.DateOfComplete| date:"MMMM y"}})
+    </div>
+    <div>
+      {{project.Stack}}
+    </div>
+    <div>
+      {{project.Description}}
+    </div>
+    <div *ngFor="let link of project.Links">
+      <a class="text-primary text-decoration-none fw-bold" [href]="link"
+        target="_blank">{{link.replace('http://', '').replace('https://', '')}}</a>
+    </div>
+  </li>
+</ul>

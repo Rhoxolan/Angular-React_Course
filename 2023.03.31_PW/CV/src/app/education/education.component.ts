@@ -12,7 +12,7 @@ export class EducationComponent {
       Name: "IT STEP Academy",
       City: "Kryvyi Rih",
       DateOfAdmission: new Date(2020, 10, 29),
-      DateOfGraduation: new Date(2023, 0, 1),
+      DateOfGraduation: new Date(2024, 0, 1),
       Specialty: "Software Development"
     },
     {
