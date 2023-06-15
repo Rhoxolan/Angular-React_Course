@@ -7,13 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactsComponent } from './contacts/contacts.component';
 import { SkillsComponent } from './skills/skills.component';
 import { EducationComponent } from './education/education.component';
+import { CertificatesComponent } from './certificates/certificates.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     SkillsComponent,
-    EducationComponent
+    EducationComponent,
+    CertificatesComponent
   ],
   imports: [
     BrowserModule,

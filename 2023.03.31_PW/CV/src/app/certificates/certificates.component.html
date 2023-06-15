@@ -1,0 +1,8 @@
+<h4>Certificates</h4>
+<ul>
+  <li *ngFor="let certificate of Certificates">
+    <div>
+      <strong>{{certificate.Name}}</strong> {{certificate.Year | date:"y"}}
+    </div>
+  </li>
+</ul>
