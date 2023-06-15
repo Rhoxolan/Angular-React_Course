@@ -1,1 +1,19 @@
-<p>experience works!</p>
+<div class="mb-3">
+  <h4>Work experience</h4>
+</div>
+<ul>
+  <li *ngFor="let work of Work">
+    <div class="mb-3">
+      <div>
+        <strong>{{work.Company}}</strong>, {{work.City}} - <i>{{work.Position}}</i>
+      </div>
+      <div>
+        {{work.DateOfEmployment| date:"MMMM y"}} - {{work.DateOfCompletion| date:"MMMM y"}}
+      </div>
+      <div>
+        {{work.Experience}}
+      </div>
+    </div>
+  </li>
+</ul>
+
