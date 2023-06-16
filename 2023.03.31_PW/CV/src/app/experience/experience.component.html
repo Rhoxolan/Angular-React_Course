@@ -8,7 +8,21 @@
         <strong>{{work.Company}}</strong>, {{work.City}} - <i>{{work.Position}}</i>
       </div>
       <div>
-        {{work.DateOfEmployment| date:"MMMM y"}} - {{work.DateOfCompletion| date:"MMMM y"}} ({{work.getEmploymentTime()[0]}} years {{work.getEmploymentTime()[1]}} month)
+        <span>
+          {{work.DateOfEmployment| date:"MMMM y"}} - {{work.DateOfCompletion| date:"MMMM y"}}&#32;
+        </span>
+        <span>
+          (
+        </span>
+        <span *ngIf="work.getEmploymentTime()[0] > 0">
+          {{work.getEmploymentTime()[0]}} years
+        </span>
+        <span *ngIf="work.getEmploymentTime()[1] > 0">
+          {{work.getEmploymentTime()[1]}} month
+        </span>
+        <span>
+          )
+        </span>
       </div>
       <div>
         {{work.Experience}}
@@ -16,4 +30,3 @@
     </div>
   </li>
 </ul>
-
