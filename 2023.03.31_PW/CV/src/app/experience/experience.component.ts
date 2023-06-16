@@ -8,30 +8,12 @@ import { Work } from './Work';
 })
 export class ExperienceComponent {
   Work: Work[] = [
-    {
-      Company: "ISP IT-Invest",
-      City: "Kryvyi Rih",
-      Position: "Network administrator",
-      DateOfEmployment: new Date(2021, 5, 1),
-      DateOfCompletion: new Date(2021, 11, 1),
-      Experience: "ISP network administration."
-    },
-    {
-      Company: "MetallurgService Plus",
-      City: "Kryvyi Rih",
-      Position: "Electrician",
-      DateOfEmployment: new Date(2020, 5, 1),
-      DateOfCompletion: new Date(2021, 5, 1),
-      Experience: "Maintenance of electrical installations at metallurgical plants."
-    },
-    {
-      Company: "ISP SunLine",
-      City: "Kryvyi Rih",
-      Position: "Cabling installer",
-      DateOfEmployment: new Date(2016, 3, 19),
-      DateOfCompletion: new Date(2020, 2, 1),
-      Experience: "Works for connecting new subscribers to the Internet network, works " +
-            "on troubleshooting. Experience with optical fiber."
-    },
+    new Work("ISP IT-Invest", "Kryvyi Rih", "Network administrator",
+      new Date(2021, 5, 1), new Date(2021, 11, 1), "ISP network administration."),
+    new Work("MetallurgService Plus", "Kryvyi Rih", "Electrician",
+      new Date(2020, 5, 1), new Date(2021, 5, 1), "Maintenance of electrical installations at metallurgical plants."),
+    new Work("ISP SunLine", "Kryvyi Rih", "Cabling installer",
+      new Date(2016, 3, 19), new Date(2020, 2, 1), ("Works for connecting new subscribers to the Internet network, works " +
+      "on troubleshooting. Experience with optical fiber."))
   ]
 }

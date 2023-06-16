@@ -8,7 +8,7 @@
         <strong>{{work.Company}}</strong>, {{work.City}} - <i>{{work.Position}}</i>
       </div>
       <div>
-        {{work.DateOfEmployment| date:"MMMM y"}} - {{work.DateOfCompletion| date:"MMMM y"}}
+        {{work.DateOfEmployment| date:"MMMM y"}} - {{work.DateOfCompletion| date:"MMMM y"}} ({{work.getEmploymentTime()[0]}} years {{work.getEmploymentTime()[1]}} month)
       </div>
       <div>
         {{work.Experience}}
