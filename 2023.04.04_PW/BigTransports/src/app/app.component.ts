@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BigTransports';
+  isShowBiggestCar: boolean = true;
+  isShowBiggestAirplane: boolean = false;
+  isShowBiggestShip: boolean = false;
+
+  showBiggestCar() {
+    this.isShowBiggestCar = true;
+    this.isShowBiggestAirplane = false;
+    this.isShowBiggestShip = false;
+  }
+
+  showBiggestAirplane() {
+    this.isShowBiggestCar = false;
+    this.isShowBiggestAirplane = true;
+    this.isShowBiggestShip = false;
+  }
+
+  showBiggestShip() {
+    this.isShowBiggestCar = false;
+    this.isShowBiggestAirplane = false;
+    this.isShowBiggestShip = true;
+  }
 }
