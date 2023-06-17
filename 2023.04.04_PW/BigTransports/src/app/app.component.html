@@ -1,17 +1,21 @@
-<div>
-  <button (click)="showBiggestCar()">Car</button>
-  <button (click)="showBiggestAirplane()">Airplane</button>
-  <button (click)="showBiggestShip()">Ship</button>
-</div>
+<div class="container-fluid mt-3">
 
-<div *ngIf="isShowBiggestCar">
-  <app-car></app-car>
-</div>
+  <div class="btn-group mb-3">
+    <button class="btn btn-outline-primary" (click)="showBiggestCar()">Car</button>
+    <button class="btn btn-outline-primary" (click)="showBiggestAirplane()">Airplane</button>
+    <button class="btn btn-outline-primary" (click)="showBiggestShip()">Ship</button>
+  </div>
 
-<div *ngIf="isShowBiggestAirplane">
-  <app-airplane></app-airplane>
-</div>
+  <div *ngIf="isShowBiggestCar">
+    <app-car></app-car>
+  </div>
 
-<div *ngIf="isShowBiggestShip">
-  <app-ship></app-ship>
+  <div *ngIf="isShowBiggestAirplane">
+    <app-airplane></app-airplane>
+  </div>
+
+  <div *ngIf="isShowBiggestShip">
+    <app-ship></app-ship>
+  </div>
+
 </div>
