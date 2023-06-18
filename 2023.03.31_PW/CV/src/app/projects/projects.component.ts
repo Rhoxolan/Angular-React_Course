@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Project } from './Project';
 import { ProjectsService } from './projects.service';
 
@@ -8,10 +8,14 @@ import { ProjectsService } from './projects.service';
   styleUrls: ['./projects.component.css'],
   providers: [ProjectsService]
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   Projects: Project[];
 
   constructor(private projectsService: ProjectsService) {
-    this.Projects = projectsService.Projects;
+    this.Projects = [];
+  }
+
+  ngOnInit() {
+    this.Projects = this.projectsService.Projects;
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SkillsService } from './skills.service';
 
 @Component({
@@ -7,10 +7,14 @@ import { SkillsService } from './skills.service';
   styleUrls: ['./skills.component.css'],
   providers: [SkillsService]
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
   skills: string[];
 
   constructor(private skillsService: SkillsService) {
-    this.skills = skillsService.skills;
+    this.skills = [];
+  }
+
+  ngOnInit() {
+    this.skills = this.skillsService.skills;
   }
 }

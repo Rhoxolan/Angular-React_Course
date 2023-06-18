@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Work } from './Work';
 import { ExperienceService } from './experience.service';
 
@@ -8,10 +8,14 @@ import { ExperienceService } from './experience.service';
   styleUrls: ['./experience.component.css'],
   providers: [ExperienceService]
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements OnInit {
   Work: Work[];
 
-  constructor(private experienceService: ExperienceService){
-    this.Work = experienceService.Work;
+  constructor(private experienceService: ExperienceService) {
+    this.Work = [];
+  }
+
+  ngOnInit() {
+    this.Work = this.experienceService.Work;
   }
 }

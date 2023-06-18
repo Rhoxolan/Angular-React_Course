@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EducationalInstitution } from "./EducationalInstitution";
 import { EducationService } from './education.service';
 
@@ -8,11 +8,14 @@ import { EducationService } from './education.service';
   styleUrls: ['./education.component.css'],
   providers: [EducationService]
 })
-export class EducationComponent {
+export class EducationComponent implements OnInit {
   Educations: EducationalInstitution[];
 
   constructor(private educationService: EducationService) {
-    this.Educations = educationService.Educations;
+    this.Educations = [];
   }
 
+  ngOnInit() {
+    this.Educations = this.educationService.Educations;
+  }
 }
