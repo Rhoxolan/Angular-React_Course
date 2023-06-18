@@ -1,28 +1,16 @@
 import { Component } from '@angular/core';
+import { SkillsService } from './skills.service';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.css'],
+  providers: [SkillsService]
 })
 export class SkillsComponent {
-  skills: string[] = [
-    "C#, .NET",
-    "ASP.NET Core (MVC, WebAPI)",
-    "WPF, Windows Froms",
-    "Entity Framework Core, ADO.NET",
-    "MS Sql Server, SQLite",
-    "T-SQL",
-    "OOP",
-    "MVC, MVVM",
-    "UML",
-    "Design patterns, SOLID, KISS, DRY",
-    "HTML, CSS, Bootstrap",
-    "JavaScript, TypeScript",
-    "REST, AJAX",
-    "JSON, XML",
-    "C++",
-    "Git, GitHub",
-    "Pre-intermediate English"
-  ]
+  skills: string[];
+
+  constructor(private skillsService: SkillsService) {
+    this.skills = skillsService.skills;
+  }
 }
