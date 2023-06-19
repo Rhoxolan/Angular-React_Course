@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "The Starry Night",
+        "author": "Vincent van Gogh",
+        "year": 1889,
+        "genre": "Postimpressionism"
+    },
+    {
+        "id": 2,
+        "name": "Mona Lisa",
+        "author": "Leonardo da Vinci",
+        "year": 1503,
+        "genre": "Renaissance"
+    }
+]
