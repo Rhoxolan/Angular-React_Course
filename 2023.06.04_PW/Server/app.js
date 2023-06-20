@@ -4,8 +4,18 @@ const app = express();
 const port = 3000;
 
 app.get('/paintings', (req, res) => {
-    //fs.createReadStream('./paintings.json').pipe(res);
-    res.sendFile(__dirname + "/paintings.json");
+    fs.readFile("paintings.json", 'utf-8', function (err, data) {
+        if (err) {
+            console.error(err);
+            return res.status(500).send("Internal Server Error");
+        }
+        try {
+            return res.json(JSON.parse(data));
+        }
+        catch {
+            return res.status(500).send("Internal Server Error");
+        }
+    });
 });
 
 app.get('/paintings/:id', (req, res) => {
@@ -49,8 +59,6 @@ app.get('/paintings/:id/size/100', (req, res) => {
         }
     });
 });
-
-
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
