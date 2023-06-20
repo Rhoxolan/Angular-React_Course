@@ -1,10 +1,12 @@
 [
     {
         "id": 1,
-        "path": ""
+        "path": "/Paintings/Van_Gogh_Starry_Night.jpg",
+        "pathThumbnail": "/Paintings/Van_Gogh_Starry_Night_100.jpg"
     },
     {
         "id": 2,
-        "path": ""
+        "path": "/Paintings/Leonardo_da_Vinci_Mona_Lisa.jpg",
+        "pathThumbnail": "/Paintings/Leonardo_da_Vinci_Mona_Lisa_100.jpg"
     }
 ]
