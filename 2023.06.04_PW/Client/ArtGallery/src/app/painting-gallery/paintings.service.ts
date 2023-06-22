@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Painting } from './Painting';
 
@@ -7,18 +7,18 @@ import { Painting } from './Painting';
 export class PaintingsService {
   private apiUrl: string = 'http://localhost:3000';
 
-  constructor(private http: HttpClient){ }
+  constructor(private http: HttpClient) { }
 
   getPaintings(): Observable<Painting[]> {
     return this.http.get<Painting[]>(`${this.apiUrl}/paintings`);
   }
 
-  getPainting(id: number) {
-    return this.http.get(`${this.apiUrl}/paintings/${id}`);
+  getPaintingURL(id: number) {
+    return `http://localhost:3000/paintings/${id}`;
   }
 
-  getPaintingThumbnail(id: number) {
-    return this.http.get(`${this.apiUrl}/paintings/${id}/size/100`);
+  getPaintingThumbnailURL(id: number) {
+    return `http://localhost:3000/paintings/${id}/size/100`;
   }
 
 }

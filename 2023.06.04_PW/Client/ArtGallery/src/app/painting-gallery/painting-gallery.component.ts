@@ -11,20 +11,20 @@ import { Painting } from './Painting';
 export class PaintingGalleryComponent implements OnInit {
   Paintings: Painting[];
 
-  constructor( private paintingsService: PaintingsService) {
+  constructor(private paintingsService: PaintingsService) {
     this.Paintings = [];
   }
 
-  getPainting(id: number) {
-    return this.paintingsService.getPainting(id);
+  getPaintingURL(id: number) {
+    return this.paintingsService.getPaintingURL(id);
   }
 
-  getPaintingThumbnail(id: number) {
-    return this.paintingsService.getPaintingThumbnail(id);
+  getPaintingThumbnailURL(id: number) {
+    return this.paintingsService.getPaintingThumbnailURL(id);
   }
 
   ngOnInit(): void {
-    this.paintingsService.getPaintings().subscribe({next: data => this.Paintings = data, error: err => console.error(err)});
+    this.paintingsService.getPaintings().subscribe({ next: data => this.Paintings = data, error: err => console.error(err) });
   }
 
 }
