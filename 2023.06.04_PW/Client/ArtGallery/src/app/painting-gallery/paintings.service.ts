@@ -21,4 +21,12 @@ export class PaintingsService {
     return `http://localhost:3000/paintings/${id}/size/100`;
   }
 
+  getPainting(id: number) {
+    return this.http.get(`${this.apiUrl}/paintings/${id}`);
+  }
+
+  getPaintingThumbnail(id: number) {
+    return this.http.get(`${this.apiUrl}/paintings/${id}/size/100`);
+  }
+
 }
