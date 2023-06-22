@@ -12,4 +12,13 @@ export class PaintingsService {
   getPaintings(): Observable<Painting[]> {
     return this.http.get<Painting[]>(`${this.apiUrl}/paintings`);
   }
+
+  getPainting(id: number) {
+    return this.http.get(`${this.apiUrl}/paintings/${id}`);
+  }
+
+  getPaintingThumbnail(id: number) {
+    return this.http.get(`${this.apiUrl}/paintings/${id}/size/100`);
+  }
+
 }
