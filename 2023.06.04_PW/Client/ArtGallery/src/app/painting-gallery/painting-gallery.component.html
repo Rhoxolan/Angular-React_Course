@@ -1,1 +1,17 @@
-<p>painting-gallery works!</p>
+<div class="d-flex">
+  <div *ngFor="let painting of Paintings">
+    <img [src]="getPaintingThumbnail(painting.id)" [alt]="painting.name">
+    <p>
+      Author: {{painting.author}}
+    </p>
+    <p>
+      Name: {{painting.name}}
+    </p>
+    <p>
+      Year: {{painting.year}}
+    </p>
+    <p>
+      Genre: {{painting.genre}}
+    </p>
+  </div>
+</div>

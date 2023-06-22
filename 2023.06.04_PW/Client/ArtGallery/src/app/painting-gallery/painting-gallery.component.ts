@@ -11,13 +11,20 @@ import { Painting } from './Painting';
 export class PaintingGalleryComponent implements OnInit {
   Paintings: Painting[];
 
-
   constructor( private paintingsService: PaintingsService) {
     this.Paintings = [];
   }
 
+  getPainting(id: number) {
+    return this.paintingsService.getPainting(id);
+  }
+
+  getPaintingThumbnail(id: number) {
+    return this.paintingsService.getPaintingThumbnail(id);
+  }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.paintingsService.getPaintings().subscribe({next: data => this.Paintings = data, error: err => console.error(err)});
   }
 
 }
