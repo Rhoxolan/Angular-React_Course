@@ -3,10 +3,14 @@ const fs = require("fs");
 const app = express();
 const port = 3000;
 
-app.get('/paintings', (req, res) => {
+app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
+    next();
+});
+
+app.get('/paintings', (req, res) => {
     fs.readFile("paintings.json", 'utf-8', function (err, data) {
         if (err) {
             console.error(err);
@@ -22,9 +26,6 @@ app.get('/paintings', (req, res) => {
 });
 
 app.get('/paintings/:id', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
     fs.readFile("db.json", 'utf-8', function (err, data) {
         if (err) {
             console.error(err);
@@ -46,9 +47,6 @@ app.get('/paintings/:id', (req, res) => {
 });
 
 app.get('/paintings/:id/size/100', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
     fs.readFile("db.json", 'utf-8', function (err, data) {
         if (err) {
             console.error(err);
