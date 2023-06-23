@@ -20,12 +20,10 @@ export class PaintingGalleryComponent implements OnInit {
   loadImage(id: number) {
     this.paintingsService.getPainting(id).subscribe({next: data => {
       const reader = new FileReader();
-      reader.onloadend = () => {
-        const imageDataUrl = reader.result as string;
-        this.ImageData = imageDataUrl;
-      };
+      reader.onloadend = () => this.ImageData = reader.result;
       reader.readAsDataURL(data);
     }});
+    this.ImageDataAlt = this.Paintings.find(p => p.id == id)?.name;
   }
 
   getPaintingURL(id: number) {
