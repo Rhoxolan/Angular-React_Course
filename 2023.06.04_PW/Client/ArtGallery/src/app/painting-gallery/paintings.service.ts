@@ -13,20 +13,12 @@ export class PaintingsService {
     return this.http.get<Painting[]>(`${this.apiUrl}/paintings`);
   }
 
-  getPaintingURL(id: number) {
-    return `http://localhost:3000/paintings/${id}`;
-  }
-
-  getPaintingThumbnailURL(id: number) {
-    return `http://localhost:3000/paintings/${id}/size/100`;
-  }
-
   getPainting(id: number) {
     return this.http.get(`${this.apiUrl}/paintings/${id}`, {responseType: 'blob'});
   }
 
   getPaintingThumbnail(id: number) {
-    return this.http.get(`${this.apiUrl}/paintings/${id}/size/100`);
+    return this.http.get(`${this.apiUrl}/paintings/${id}/size/100`, {responseType: 'blob'});
   }
 
 }

@@ -4,4 +4,5 @@ export class Painting {
   author!: string;
   year!: number;
   genre!: string;
+  ImageData?: any;
 }
