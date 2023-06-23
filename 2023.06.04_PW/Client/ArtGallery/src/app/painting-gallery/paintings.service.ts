@@ -22,7 +22,7 @@ export class PaintingsService {
   }
 
   getPainting(id: number) {
-    return this.http.get(`${this.apiUrl}/paintings/${id}`);
+    return this.http.get(`${this.apiUrl}/paintings/${id}`, {responseType: 'blob'});
   }
 
   getPaintingThumbnail(id: number) {

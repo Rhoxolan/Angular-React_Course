@@ -1,7 +1,7 @@
-<div class="d-flex">
+<div class="d-flex mb-3">
   <div *ngFor="let painting of Paintings" class="me-4" id="paintingCardDiv">
     <div class="d-flex align-items-center justify-content-center" id="paintingDiv">
-      <img [src]="getPaintingThumbnailURL(painting.id)" [alt]="painting.name">
+      <img [src]="getPaintingThumbnailURL(painting.id)" (click)="loadImage(painting.id)" [alt]="painting.name">
     </div>
     <div class="mb-1">
       Author: {{painting.author}}
@@ -17,3 +17,5 @@
     </div>
   </div>
 </div>
+
+<img *ngIf="ImageData" [src]="ImageData" alt="{{ImageDataAlt}}">

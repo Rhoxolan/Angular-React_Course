@@ -10,9 +10,22 @@ import { Painting } from './Painting';
 })
 export class PaintingGalleryComponent implements OnInit {
   Paintings: Painting[];
+  ImageData?: any;
+  ImageDataAlt?: string;
 
   constructor(private paintingsService: PaintingsService) {
     this.Paintings = [];
+  }
+
+  loadImage(id: number) {
+    this.paintingsService.getPainting(id).subscribe({next: data => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const imageDataUrl = reader.result as string;
+        this.ImageData = imageDataUrl;
+      };
+      reader.readAsDataURL(data);
+    }});
   }
 
   getPaintingURL(id: number) {
