@@ -12,6 +12,7 @@ const routes: Routes = [
   {
     path: "about", component: AboutComponent, title: "About", children: [
       { path: "company", component: AboutCompanyComponent, title: "About Company" },
+      { path: "aboutcompany", redirectTo: "company" },
       { path: "contacts", component: ContactsComponent, title: "Contacts" }
     ]
   },
