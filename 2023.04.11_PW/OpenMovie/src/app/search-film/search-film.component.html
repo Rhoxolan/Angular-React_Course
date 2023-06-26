@@ -1,4 +1,39 @@
-<p>search-film works!</p>
+<form #searchFilmForm="ngForm" (ngSubmit)="submit(searchFilmForm)">
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col">
+        <label class="form-label" for="nameInput">
+          Name:
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <input class="form-control" id="nameInput" name="name" [(ngModel)]="searchFilmData.Name"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col">
+        <label class="form-label" for="yearInput">
+          Year:
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <input class="form-control" type="number" min="1895" max="{{year}}" step="1" id="yearInput" name="year" [(ngModel)]="searchFilmData.Year"/>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success">Search</button>
+
+</form>
+
 <p>
   <span>
     Information about the project -
