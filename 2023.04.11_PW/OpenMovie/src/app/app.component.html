@@ -1,7 +1,7 @@
 <div class="container mt-3">
   <div class="btn-group mb-3">
-    <a class="btn btn-outline-danger" routerLink="">Search Movie</a>
-    <a class="btn btn-outline-danger" routerLink="about">About</a>
+    <a class="btn btn-outline-danger" routerLink="" routerLinkActive="bg-warning fw-semibold" [routerLinkActiveOptions]="{exact: true}">Search Movie</a>
+    <a class="btn btn-outline-danger" routerLink="about" routerLinkActive="bg-warning fw-semibold">About</a>
   </div>
   <div>
     <router-outlet></router-outlet>
