@@ -3,6 +3,21 @@
   <div class="mb-3">
     <div class="row">
       <div class="col">
+        <label class="form-label" for="keyInput">
+          Your API key:
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <input class="form-control border-primary border-opacity-75" id="keyInput" name="key" [(ngModel)]="searchFilmData.Key" />
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col">
         <label class="form-label" for="nameInput">
           Name:
         </label>
@@ -10,7 +25,7 @@
     </div>
     <div class="row">
       <div class="col-5">
-        <input class="form-control" id="nameInput" name="name" [(ngModel)]="searchFilmData.Name"/>
+        <input class="form-control border-primary border-opacity-75" id="nameInput" name="name" [(ngModel)]="searchFilmData.Name" />
       </div>
     </div>
   </div>
@@ -25,14 +40,30 @@
     </div>
     <div class="row">
       <div class="col-5">
-        <input class="form-control" type="number" min="1895" max="{{year}}" step="1" id="yearInput" name="year" [(ngModel)]="searchFilmData.Year"/>
+        <input class="form-control border-primary border-opacity-75" type="number" min="1895" max="{{year}}" step="1" id="yearInput" name="year"
+          [(ngModel)]="searchFilmData.Year" />
       </div>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-success">Search</button>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-success">Search</button>
+  </div>
 
 </form>
+
+<div *ngIf="movie" class="mb-3">
+  <div id="movieOutputTextArea" class="form-control border-primary px-4 py-3" rows="10" readonly>
+    <span>Title - {{movie.Title}}</span><br>
+    <span>Year - {{movie.Year}}</span><br>
+    <span>Director - {{movie.Director}}</span><br>
+    <span>Actors - {{movie.Actors}}</span><br>
+    <span>Released - {{movie.Released}}</span><br>
+    <span>Genre - {{movie.Genre}}</span><br>
+    <span>Awards - {{movie.Awards}}</span><br>
+    <span>DVD - {{movie.DVD}}</span><br>
+  </div>
+</div>
 
 <p>
   <span>
