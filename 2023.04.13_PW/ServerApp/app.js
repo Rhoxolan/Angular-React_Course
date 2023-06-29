@@ -4,7 +4,6 @@ const app = express();
 const port = 3000;
 const jsonParser = express.json();
 var pgp = require("pg-promise")(/*options*/);
-//console.log(process.env.password);
 var db = pgp(`postgres://postgres:${process.env.password}@localhost:5432/Users`);
 
 app.use((req, resp, next) => {
