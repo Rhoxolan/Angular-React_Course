@@ -11,7 +11,7 @@ import { HttpService } from '../http.service';
 export class UserListComponent implements OnInit {
   Users: User[];
 
-  public constructor(private http: HttpService) {
+  constructor(private http: HttpService) {
     this.Users = [];
   }
 
