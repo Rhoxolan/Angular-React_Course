@@ -45,8 +45,8 @@ app.put("/users/:id", jsonParser, async (req, resp) => {
 });
 
 app.post("/users", jsonParser, async (req, resp) => {
-    let username = req.body.name;
-    let userage = req.body.age;
+    let username = req.body.Name;
+    let userage = req.body.Age;
     if (!username && !userage) {
         resp.sendStatus(422);
     }
