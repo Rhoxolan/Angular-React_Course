@@ -36,7 +36,7 @@ app.put("/users/:id", jsonParser, async (req, resp) => {
     if (!user.name && !user.age) {
         resp.sendStatus(422);
     }
-    await db.none('UPDATE public."Users" SET name = ${name}, age = ${age} WHERE id=${id}', {
+    await db.none('UPDATE public."Users" SET Name = ${name}, Age = ${age} WHERE id=${id}', {
         name: user.name,
         age: user.age,
         id: user.id
@@ -50,7 +50,7 @@ app.post("/users", jsonParser, async (req, resp) => {
     if (!username && !userage) {
         resp.sendStatus(422);
     }
-    await db.none('INSERT INTO "Users"("name", "age") VALUES(${name}, ${age})', {
+    await db.none('INSERT INTO "Users"("Name", "Age") VALUES(${name}, ${age})', {
         name: username,
         age: userage,
     });
