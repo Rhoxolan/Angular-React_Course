@@ -17,7 +17,7 @@ export class DeleteConfirmComponent {
   }
 
   deleteConfirm() {
-    this.http.deleteUser(this.Id);
+    this.http.deleteUser(this.Id).subscribe();
     this.router.navigate(["/"]);
   }
 

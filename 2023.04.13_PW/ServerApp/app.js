@@ -15,13 +15,13 @@ app.use((req, resp, next) => {
 
 app.get('/users/:id', async (req, resp) => {
     let id = req.params.id;
-    let user = await db.one(`SELECT * FROM public."Users" WHERE id=${id}`);
+    let user = await db.one(`SELECT * FROM public."Users" WHERE Id=${id}`);
     resp.json(user);
 });
 
 app.delete("/users/:id", async (req, resp) => {
     let id = req.params.id;
-    await db.one(`DELETE FROM public."Users" WHERE id=${id} returning id`);
+    await db.none(`DELETE FROM public."Users" WHERE "Id"=${id}`);
     resp.end();
 });
 
