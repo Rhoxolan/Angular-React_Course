@@ -34,4 +34,4 @@ PW - работа "Art Gallery"
 PW - работа "OpenMovie" - поиск информации о фильме с помошью OMDb API. Работа с маршрутизацией в Angular, пример определения маршрутов, пример определения дочерних маршрутов, пример определения перенаправления на маршрут с помошью параметра redirectTo, пример стилизации активных ссылок с помощью параметра routerLinkActive. Работа с формой, пример отправки формы с использованием события ngSubmit.
 
 
-библиотека pg-promise (https://www.npmjs.com/package/pg-promise), работа с PostgreSQL.
+библиотека pg-promise (https://www.npmjs.com/package/pg-promise), работа с PostgreSQL; параметры маршрута
