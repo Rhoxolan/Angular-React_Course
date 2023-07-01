@@ -15,8 +15,8 @@ export class HttpService {
     return this.http.get<User[]>("http://localhost:3000/users");
   }
 
-  editUser(user: User) {
-    return this.http.put<User>("http://localhost:3000/users", user);
+  editUser(id: number, user: User) {
+    return this.http.put<User>(`http://localhost:3000/users/${id}`, user);
   }
 
   postUser(user: User) {

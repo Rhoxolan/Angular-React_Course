@@ -15,7 +15,7 @@ app.use((req, resp, next) => {
 
 app.get('/users/:id', async (req, resp) => {
     let id = req.params.id;
-    let user = await db.one(`SELECT * FROM public."Users" WHERE Id=${id}`);
+    let user = await db.one(`SELECT * FROM public."Users" WHERE "Id"=${id}`);
     resp.json(user);
 });
 
@@ -27,16 +27,16 @@ app.delete("/users/:id", async (req, resp) => {
 
 app.put("/users/:id", jsonParser, async (req, resp) => {
     let id = req.params.id;
-    let user = await db.one(`SELECT * FROM public."Users" WHERE id=${id}`);
+    let user = await db.one(`SELECT * FROM public."Users" WHERE "Id"=${id}`);
     if (!user) {
-        resp.sendStatus(404);
+        return resp.sendStatus(404);
     }
-    user.name = req.body.name;
-    user.age = req.body.age;
+    user.name = req.body.Name;
+    user.age = req.body.Age;
     if (!user.name && !user.age) {
-        resp.sendStatus(422);
+        return resp.sendStatus(422);
     }
-    await db.none('UPDATE public."Users" SET Name = ${name}, Age = ${age} WHERE id=${id}', {
+    await db.none('UPDATE public."Users" SET "Name" = ${name}, "Age" = ${age} WHERE "Id"=${id}', {
         name: user.name,
         age: user.age,
         id: user.id
@@ -48,7 +48,7 @@ app.post("/users", jsonParser, async (req, resp) => {
     let username = req.body.Name;
     let userage = req.body.Age;
     if (!username && !userage) {
-        resp.sendStatus(422);
+        return resp.sendStatus(422);
     }
     await db.none('INSERT INTO "Users"("Name", "Age") VALUES(${name}, ${age})', {
         name: username,
