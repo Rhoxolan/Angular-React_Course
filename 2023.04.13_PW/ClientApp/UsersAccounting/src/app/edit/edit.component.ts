@@ -20,7 +20,9 @@ export class EditComponent {
   }
 
   submit() {
-    this.http.editUser(this.Id, this.User).subscribe();
-    this.router.navigate(['/']);
+     this.http.editUser(this.Id, this.User).subscribe({
+      next: () => this.router.navigate(['/']),
+      error: err => console.error(err)
+    });
   };
 }

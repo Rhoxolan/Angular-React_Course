@@ -39,7 +39,7 @@ app.put("/users/:id", jsonParser, async (req, resp) => {
     await db.none('UPDATE public."Users" SET "Name" = ${name}, "Age" = ${age} WHERE "Id"=${id}', {
         name: user.name,
         age: user.age,
-        id: user.id
+        id: user.Id
     });
     resp.json(user);
 });

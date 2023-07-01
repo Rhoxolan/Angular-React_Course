@@ -12,13 +12,15 @@ import { Router } from '@angular/router';
 export class CreateComponent {
   User!: User;
 
-  constructor(private http: HttpService, private router: Router){
+  constructor(private http: HttpService, private router: Router) {
     this.User = new User();
   }
 
   submit() {
-    this.http.postUser(this.User).subscribe();
-    this.router.navigate(['/']);
+    this.http.postUser(this.User).subscribe({
+      next: () => this.router.navigate(['/']),
+      error: err => console.error(err)
+    });
   };
 
 }

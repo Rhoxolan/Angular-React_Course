@@ -17,8 +17,10 @@ export class DeleteConfirmComponent {
   }
 
   deleteConfirm() {
-    this.http.deleteUser(this.Id).subscribe();
-    this.router.navigate(["/"]);
+    this.http.deleteUser(this.Id).subscribe({
+      next: () => this.router.navigate(['/']),
+      error: err => console.error(err)
+    });
   }
 
 }
