@@ -8,12 +8,13 @@ export default function RGB() {
         r: 'btn-outline-danger',
         g: 'btn-outline-success',
         b: 'btn-outline-primary',
-      };
-    
+    };
+
     return (
         <>
             <div className='mb-3'>
-                <div style={{ backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})` }} className='form-control border-primary border-opacity-75' id='colorDiv'>
+                <div style={{ backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})` }}
+                    className='form-control border-primary border-opacity-75' id='colorDiv'>
                 </div>
             </div>
             <div className='mb-3 d-flex'>
@@ -37,10 +38,18 @@ export default function RGB() {
                     Object.keys(color).map(k => {
                         return (
                             <div key={k} className='btn-group mb-2 d-block'>
-                                <button className={`btn ${buttonClasses[k]} rgbButton`} onClick={() => { if (color[k] < 255) setColor({ ...color, [k]: color[k] + 1 }); }}>
+                                <button onClick={() => {
+                                    if (color[k] < 255) {
+                                        setColor({ ...color, [k]: color[k] + 1 });
+                                    }
+                                }} className={`btn ${buttonClasses[k]} rgbButton`} >
                                     {k.toUpperCase()}++
                                 </button>
-                                <button className={`btn ${buttonClasses[k]} rgbButton`} onClick={() => { if (color[k] > 0) setColor({ ...color, [k]: color[k] - 1 }); }}>
+                                <button onClick={() => {
+                                    if (color[k] > 0) {
+                                        setColor({ ...color, [k]: color[k] - 1 });
+                                    }
+                                }} className={`btn ${buttonClasses[k]} rgbButton`}>
                                     {k.toUpperCase()}--
                                 </button>
                             </div>
