@@ -3,7 +3,9 @@ import PersonalPageForm from './PersonalPageForm';
 
 function App() {
   return (
-   <PersonalPageForm></PersonalPageForm>
+    <div className='container mt-3'>
+      <PersonalPageForm></PersonalPageForm>
+    </div>
   );
 }
 
