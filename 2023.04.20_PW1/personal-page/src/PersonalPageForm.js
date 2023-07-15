@@ -17,7 +17,8 @@ export default class PersonalPageForm extends React.Component {
         return (
             <form onSubmit={e => {
                 e.preventDefault();
-                let info = `${this.state.firstName} ${this.state.lastName} ${this.state.eMail} ${this.state.number} ${this.state.city}`;
+                let info = `${this.state.firstName} ${this.state.lastName} ${this.state.eMail} ` +
+                    `${this.state.number} ${this.state.city}`;
                 alert(info);
             }}>
                 <div className='mb-3 w-25'>
